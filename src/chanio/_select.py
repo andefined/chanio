@@ -37,7 +37,7 @@ async def select(
 ) -> tuple[Any, int | None]:
     """Race over recv/send cases. Returns ``(value, index)``.
 
-    ``index`` is the position of the winning op in ``ops`` (``None`` cases are 
+    ``index`` is the position of the winning op in ``ops`` (``None`` cases are
     skipped but keep their original index), or ``None`` if ``default`` fired.
     """
     indexed: list[tuple[int, _RecvOp | _SendOp]] = [
@@ -62,9 +62,7 @@ async def select(
 
     result: dict[str, Any] = {}
 
-    async def _wait_recv(
-        i: int, ch: Channel[Any], cancel_scope: anyio.CancelScope
-    ) -> None:
+    async def _wait_recv(i: int, ch: Channel[Any], cancel_scope: anyio.CancelScope) -> None:
         value = await ch.recv()
         if "value" not in result:
             result["value"] = value
