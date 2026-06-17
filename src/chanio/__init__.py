@@ -1,7 +1,12 @@
 """Select and CSP combinators for AnyIO."""
 
 from chanio._channel import Channel
-from chanio._exceptions import BrokenResourceError, ClosedResourceError, EndOfStream, WouldBlock
+from chanio._exceptions import (
+    BrokenResourceError,
+    ClosedResourceError,
+    EndOfStream,
+    WouldBlock,
+)
 from chanio._select import after, select
 
 __all__ = [

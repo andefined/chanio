@@ -50,6 +50,7 @@ dev = [
   "hypothesis>=6.100",
   "ruff>=0.6",
   "mypy>=1.11",
+  "pre-commit>=3.8",
 ]
 
 [tool.hatch.version]
@@ -71,4 +72,3 @@ select = ["E", "F", "I", "UP", "B", "ASYNC"]
 [tool.mypy]
 strict = true
 python_version = "3.11"
-
